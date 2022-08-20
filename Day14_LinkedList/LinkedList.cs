@@ -89,6 +89,27 @@ namespace Day14_LinkedList
             }
         }
 
+        public void PopLast()
+        {
+            {
+
+                if (head == null & tail == null)
+                {
+                    Console.WriteLine("Nothing to delete list is empty");
+
+                }
+
+                Node temp = head;
+                
+                while (temp.next.next != null)
+                {
+
+                    temp = temp.next;
+                }
+                
+                temp.next = null;
+            }
+        }
         internal void Display()
         {
             Node temp= this.head;
