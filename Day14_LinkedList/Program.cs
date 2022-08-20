@@ -19,6 +19,8 @@ namespace Day14_LinkedList
             list.Append(70);
             list.Insert(30,56);
             list.Display();
+            list.DeleteNodeAtFirst();
+            list.Display();
         }
     }
 }

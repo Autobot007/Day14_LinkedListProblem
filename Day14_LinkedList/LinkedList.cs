@@ -72,7 +72,21 @@ namespace Day14_LinkedList
                 }
                 temp.next = node;
             }
-            Console.WriteLine($"Added {data} at start of the linkedlist");
+        }
+
+        public void DeleteNodeAtFirst()
+        {
+            {
+                if (head == null & tail == null)
+                {
+                    Console.WriteLine("Nothing to delete list is empty");
+                }
+                Node temp = head;
+                
+                head = head.next;
+
+                Console.WriteLine("Removed from linkedlist :" + temp.data);
+            }
         }
 
         internal void Display()
