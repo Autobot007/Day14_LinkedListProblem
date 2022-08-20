@@ -29,7 +29,28 @@ namespace Day14_LinkedList
             //        temp.next = node;
             //    }
 
-            Console.WriteLine("{0} is inserted into Linked List", node.data);
+            //Console.WriteLine("{0} is inserted into Linked List", node.data);
+        }
+        public void Insert(int data,int previous)
+        {
+            
+                Node newNode = new Node(data);
+                if (head == null & tail == null)
+                {
+                    head = newNode;
+                }
+                else
+                {
+                    Node temp = head;
+                    
+                    while (temp.data != previous)
+                    {
+                        temp = temp.next;
+                    }
+                    newNode.next = temp.next;
+                    temp.next = newNode;
+                }
+            
         }
         public void Append(int data)
         {
