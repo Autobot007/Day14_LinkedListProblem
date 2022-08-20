@@ -27,5 +27,22 @@ namespace Day14_LinkedList
 
             Console.WriteLine("{0} is inserted into Linked List",node.data);
         }
+
+        internal void Display()
+        {
+            Node temp= this.head;
+            if (temp == null)
+            {
+                Console.WriteLine("Linked list is empty");
+                return;
+            }
+            while(temp != null)
+            {
+                Console.WriteLine(temp.data+"");
+                 temp = temp.next;
+
+            }
+
+        }
     }
 }
