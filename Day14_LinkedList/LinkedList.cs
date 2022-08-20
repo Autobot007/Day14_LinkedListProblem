@@ -9,23 +9,49 @@ namespace Day14_LinkedList
     public class LinkedList
     {
         public Node head;
+        public Node tail;
 
         public void Add(int data)
         {
+
             Node node = new Node(data);
-            if (this.head == null)
-                this.head = node;
+              this.head= node;
+            //    Node node = new Node(data);
+            //    if (this.head == null)
+            //        this.head = node;
+            //    else
+            //    {
+            //        Node temp = head;
+            //        while(temp.next != null)
+            //        {
+            //            temp = temp.next;
+            //        }
+            //        temp.next = node;
+            //    }
+
+            Console.WriteLine("{0} is inserted into Linked List", node.data);
+        }
+        public void Append(int data)
+        {
+
+            Node node = new Node(data);
+           
+            if (head == null & tail == null)
+            {
+                head = node;
+                tail = node;
+            }
             else
             {
                 Node temp = head;
-                while(temp.next != null)
+               
+                while (temp.next != null)
                 {
                     temp = temp.next;
                 }
                 temp.next = node;
             }
-
-            Console.WriteLine("{0} is inserted into Linked List",node.data);
+            Console.WriteLine($"Added {data} at start of the linkedlist");
         }
 
         internal void Display()

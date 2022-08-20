@@ -13,6 +13,7 @@ namespace Day14_LinkedList
         public Node(int data)
         {
             this.data = data;
+            next = null;
         }
     }
 }
