@@ -20,7 +20,13 @@ namespace Day14_LinkedList
             list.Insert(30,56);
             list.Display();
             // list.DeleteNodeAtFirst();
-            list.PopLast();
+            // list.PopLast();
+            Console.WriteLine("Search For Node value 30");
+            list.Display();
+            if (list.Search(30))
+            {
+                Console.WriteLine("\nNode with value 30 is available in Linked list");
+            }
             list.Display();
         }
     }

@@ -110,6 +110,25 @@ namespace Day14_LinkedList
                 temp.next = null;
             }
         }
+
+        public bool Search(int value)
+        {
+            {
+                
+                Node temp = head;
+                
+                while (temp != null)
+                {
+                    
+                    if (temp.data == value)
+                    {
+                        return true;
+                    }
+                    temp = temp.next;
+                }
+                return false;
+            }
+        }
         internal void Display()
         {
             Node temp= this.head;
