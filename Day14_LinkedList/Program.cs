@@ -97,19 +97,31 @@ namespace Day14_LinkedList
                     list.Display();
                     break;
                 case 9:
-                    Console.WriteLine("Deleting 40 from linkedlist");
+                    Console.WriteLine("\nDeleting 40 from linkedlist");
                     list.Add(56);
                     list.Add(30);
                     list.Add(70);
                     list.InsertNode(40, 30);
                     list.Display();
                     list.deleteNode(40);
-                    Console.WriteLine("Linked list after deleting 40");
+                    Console.WriteLine("\nLinked list after deleting 40");
                     list.Display();
                     
                     break;
                 case 10:
-                    Console.WriteLine("Ordering linked list in Ascending order");
+                    Console.WriteLine("\nOrdering linked list in Ascending order");
+                    list.Add(56);
+                    list.Add(30);
+                    list.Add(70);
+                    list.Add(40);
+                    Console.WriteLine("\nList Before Sorting");
+                    list.Display();
+                    Console.WriteLine("\n List after sorting");
+                    list.sort();
+                    list.Display();
+                    break;
+                default:
+                    Console.WriteLine("\n Invalid Entry");
                     break;
             }
            
