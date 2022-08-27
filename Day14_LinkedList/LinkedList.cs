@@ -15,21 +15,21 @@ namespace Day14_LinkedList
         {
 
             Node node = new Node(data);
-              this.head= node;
-            //    Node node = new Node(data);
-            //    if (this.head == null)
-            //        this.head = node;
-            //    else
-            //    {
-            //        Node temp = head;
-            //        while(temp.next != null)
-            //        {
-            //            temp = temp.next;
-            //        }
-            //        temp.next = node;
-            //    }
+            if (this.head == null)
+            { 
+            this.head = node;
+            }
+            else
+            {
+                Node temp = head;
+                while (temp.next != null)
+                {
+                    temp = temp.next;
+                }
+                temp.next = node;
+            }
 
-            //Console.WriteLine("{0} is inserted into Linked List", node.data);
+            Console.WriteLine("{0} is added into Linked List", node.data);
         }
         public void Insert(int data,int previous)
         {
@@ -50,7 +50,7 @@ namespace Day14_LinkedList
                     newNode.next = temp.next;
                     temp.next = newNode;
                 }
-            
+            Console.WriteLine("{0} is inserted into Linked List", newNode.data);
         }
         public void Append(int data)
         {
@@ -72,8 +72,29 @@ namespace Day14_LinkedList
                 }
                 temp.next = node;
             }
+            Console.WriteLine("{0} is appended into Linked List", node.data);
         }
 
+        public void InsertNode(int value, int Previousvalue)
+        {
+            Node newNode = new Node(value);
+            if (head == null & tail == null)
+            {
+                head = newNode;
+            }
+            else
+            {
+                Node temp = head;
+                
+                while (temp.data != Previousvalue)
+                {
+                    temp = temp.next;
+                }
+                newNode.next = temp.next;
+                temp.next = newNode;
+            }
+            Console.WriteLine("Added at in between: " + value);
+        }
         public void DeleteNodeAtFirst()
         {
             {
