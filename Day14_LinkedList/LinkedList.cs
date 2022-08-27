@@ -15,48 +15,48 @@ namespace Day14_LinkedList
         {
 
             Node node = new Node(data);
-              this.head= node;
-            //    Node node = new Node(data);
-            //    if (this.head == null)
-            //        this.head = node;
-            //    else
-            //    {
-            //        Node temp = head;
-            //        while(temp.next != null)
-            //        {
-            //            temp = temp.next;
-            //        }
-            //        temp.next = node;
-            //    }
+            if (this.head == null)
+            {
+                this.head = node;
+            }
+            else
+            {
+                Node temp = head;
+                while (temp.next != null)
+                {
+                    temp = temp.next;
+                }
+                temp.next = node;
+            }
 
-            //Console.WriteLine("{0} is inserted into Linked List", node.data);
+            Console.WriteLine("{0} is added into Linked List", node.data);
         }
-        public void Insert(int data,int previous)
+        public void Insert(int data, int previous)
         {
-            
-                Node newNode = new Node(data);
-                if (head == null & tail == null)
+
+            Node newNode = new Node(data);
+            if (head == null & tail == null)
+            {
+                head = newNode;
+            }
+            else
+            {
+                Node temp = head;
+
+                while (temp.data != previous)
                 {
-                    head = newNode;
+                    temp = temp.next;
                 }
-                else
-                {
-                    Node temp = head;
-                    
-                    while (temp.data != previous)
-                    {
-                        temp = temp.next;
-                    }
-                    newNode.next = temp.next;
-                    temp.next = newNode;
-                }
-            
+                newNode.next = temp.next;
+                temp.next = newNode;
+            }
+            Console.WriteLine("{0} is inserted into Linked List", newNode.data);
         }
         public void Append(int data)
         {
 
             Node node = new Node(data);
-           
+
             if (head == null & tail == null)
             {
                 head = node;
@@ -65,15 +65,36 @@ namespace Day14_LinkedList
             else
             {
                 Node temp = head;
-               
+
                 while (temp.next != null)
                 {
                     temp = temp.next;
                 }
                 temp.next = node;
             }
+            Console.WriteLine("{0} is appended into Linked List", node.data);
         }
 
+        public void InsertNode(int value, int Previousvalue)
+        {
+            Node newNode = new Node(value);
+            if (head == null & tail == null)
+            {
+                head = newNode;
+            }
+            else
+            {
+                Node temp = head;
+
+                while (temp.data != Previousvalue)
+                {
+                    temp = temp.next;
+                }
+                newNode.next = temp.next;
+                temp.next = newNode;
+            }
+            Console.WriteLine("Added at in between: " + value);
+        }
         public void DeleteNodeAtFirst()
         {
             {
@@ -82,7 +103,7 @@ namespace Day14_LinkedList
                     Console.WriteLine("Nothing to delete list is empty");
                 }
                 Node temp = head;
-                
+
                 head = head.next;
 
                 Console.WriteLine("Removed from linkedlist :" + temp.data);
@@ -100,13 +121,13 @@ namespace Day14_LinkedList
                 }
 
                 Node temp = head;
-                
+
                 while (temp.next.next != null)
                 {
 
                     temp = temp.next;
                 }
-                
+
                 temp.next = null;
             }
         }
@@ -114,12 +135,12 @@ namespace Day14_LinkedList
         public bool Search(int value)
         {
             {
-                
+
                 Node temp = head;
-                
+
                 while (temp != null)
                 {
-                    
+
                     if (temp.data == value)
                     {
                         return true;
@@ -129,20 +150,46 @@ namespace Day14_LinkedList
                 return false;
             }
         }
-        internal void Display()
+        public void Display()
         {
-            Node temp= this.head;
+            Node temp = this.head;
             if (temp == null)
             {
                 Console.WriteLine("Linked list is empty");
                 return;
             }
-            while(temp != null)
+            while (temp != null)
             {
-                Console.WriteLine(temp.data+"");
-                 temp = temp.next;
+                Console.WriteLine(temp.data + "");
+                temp = temp.next;
 
             }
+
+        }
+        public void deleteNode(int value)
+        {
+
+            Node temp = head, prev = null;
+
+
+            if (temp != null && temp.data == value)
+            {
+
+                head = temp.next;
+                return;
+            }
+
+
+            while (temp != null && temp.data != value)
+            {
+                prev = temp;
+                temp = temp.next;
+            }
+
+
+            if (temp == null)
+                return;
+            prev.next = temp.next;
 
         }
     }
